@@ -43,3 +43,20 @@ import - initialCards from cards-data
 import GameProvider
 
 place App within GameProvider which is within React.StrictMode
+
+# App.js
+-- import useGameContext
+1)
+    --We no longer need to track state in app.js
+        --Instead, we'll import useGameContext
+    --App will need to catch all props required on this page in a object we set = to useGameContext
+        -- selectedCard, deck, playerOneHand, playerTwoHand, playerThreeHand
+
+2)
+    --We no longer want to house our passCard(card) and findCardIndex() in app.js
+        We can move passCard(card) to ExecutePassButton.js
+        We can move findCardIndex into it's own file -- make sure to export this function, we'll need to import it to our ExecutePassButton()
+3)
+    --Our <Player /> components now only need to pass player={1} and hand={playerXHand} as props
+    --<CardList /> only needs to pass cards={deck} and player={'deck'} as props
+    <ExecutePassButton /> no longer needs to pass any props
