@@ -38,3 +38,8 @@ import - initialCards from cards-data
     }
 
 4) Set up state like normal
+
+# index.js
+import GameProvider
+
+place App within GameProvider which is within React.StrictMode
